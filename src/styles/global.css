@@ -3,5 +3,17 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    font-family: 'Courier Prime', Courier, monospace;
+    background-color: #FCF7E6;
+    color: #483427;
+  }
+
+  body {
+    font-family: 'Courier Prime', Courier, monospace;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Courier Prime', Courier, monospace;
+    letter-spacing: -0.02em;
   }
 }

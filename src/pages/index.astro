@@ -5,20 +5,18 @@ import {
   Linkedin, 
   Mail, 
   ExternalLink, 
-  Code2, 
   FolderGit2, 
-  Layers, 
-  Briefcase, 
-  GraduationCap, 
+  Code2, 
   ArrowUpRight,
-  Terminal,
-  Sparkles
+  Sparkles,
+  Heart,
+  FileText
 } from 'lucide-astro';
 
 const projects = [
   {
     title: "FilmStrip",
-    description: "An aesthetic filter and photo curation application designed to give digital photos the vintage feel of analog film.",
+    description: "An aesthetic filter and photo curation application designed to give digital photos the vintage warmth of analog film.",
     tags: ["React", "TypeScript", "Tailwind CSS", "Canvas API"],
     github: "https://github.com/amaydle/FilmStrip",
     demo: null,
@@ -32,21 +30,21 @@ const projects = [
   },
   {
     title: "Getting Things Done (GTD)",
-    description: "A streamlined productivity application implementing David Allen's Getting Things Done methodology for intuitive task capture and workflow management.",
+    description: "A streamlined productivity app implementing David Allen's Getting Things Done framework for mindful task capture and intuitive workflows.",
     tags: ["TypeScript", "Full Stack", "Productivity"],
     github: "https://github.com/amaydle/getting-things-done",
     demo: null,
   },
   {
     title: "Cumulus",
-    description: "A lightweight cloud utility and micro-service designed for seamless data synchronization and storage experiments.",
+    description: "A lightweight cloud utility and microservice designed for seamless data synchronization and storage experiments.",
     tags: ["Cloud", "API", "Backend"],
     github: "https://github.com/amaydle/Cumulus",
     demo: null,
   },
   {
     title: "Experiments & Snippets",
-    description: "A curated repository of small-scale implementations, creative algorithms, UI components, and code experiments.",
+    description: "A curated repository of small-scale implementations, creative algorithms, playful UI components, and code experiments.",
     tags: ["Algorithms", "Web Dev", "Prototyping"],
     github: "https://github.com/amaydle/experiments",
     demo: null,
@@ -63,107 +61,143 @@ const skillCategories = [
     skills: ["React", "Astro", "Tailwind CSS", "Next.js", "Responsive Design", "Figma"]
   },
   {
-    category: "Backend & Cloud",
+    category: "Backend & Systems",
     skills: ["Node.js", "Express", "RESTful APIs", "Git / GitHub", "Docker"]
   },
   {
-    category: "Specialized & Interests",
-    skills: ["Machine Learning", "Reinforcement Learning", "System Architecture", "UI/UX"]
+    category: "Interests & Research",
+    skills: ["Machine Learning", "Reinforcement Learning", "UI/UX Design", "Creative Coding"]
   }
 ];
 ---
 
 <Layout title="Amaya Kahada Gamage | Portfolio">
-  <!-- Navigation Header -->
-  <header class="sticky top-0 z-50 backdrop-blur-md bg-neutral-950/80 border-b border-neutral-800/60">
-    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-      <a href="#" class="font-bold text-lg tracking-tight hover:text-sky-400 transition-colors">
-        amaydle<span class="text-sky-400">.</span>
+  <!-- Top Navigation Bar -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-[#FCF7E6]/90 border-b border-[#E8D9C5]">
+    <div class="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#" class="font-bold text-lg tracking-tight text-[#483427] hover:text-[#88BAE0] transition-colors">
+        amaydle<span class="text-[#F2C2CC]">.</span>
       </a>
 
-      <nav class="hidden md:flex items-center space-x-6 text-sm text-neutral-400 font-medium">
-        <a href="#about" class="hover:text-neutral-100 transition-colors">About</a>
-        <a href="#projects" class="hover:text-neutral-100 transition-colors">Projects</a>
-        <a href="#skills" class="hover:text-neutral-100 transition-colors">Skills</a>
-        <a href="#contact" class="hover:text-neutral-100 transition-colors">Contact</a>
+      <nav class="hidden sm:flex items-center space-x-6 text-sm font-medium text-[#7E695A]">
+        <a href="#about" class="hover:text-[#483427] transition-colors">about</a>
+        <a href="#projects" class="hover:text-[#483427] transition-colors">projects</a>
+        <a href="#skills" class="hover:text-[#483427] transition-colors">skills</a>
+        <a href="#contact" class="hover:text-[#483427] transition-colors">contact</a>
       </nav>
 
-      <div class="flex items-center space-x-3 text-neutral-400">
-        <a href="https://github.com/amaydle" target="_blank" rel="noreferrer" class="p-2 hover:text-white transition-colors" aria-label="GitHub">
+      <div class="flex items-center space-x-3 text-[#7E695A]">
+        <a 
+          href="https://github.com/amaydle" 
+          target="_blank" 
+          rel="noreferrer" 
+          class="p-2 hover:text-[#483427] transition-colors" 
+          aria-label="GitHub"
+        >
           <Github class="w-5 h-5" />
         </a>
-        <a href="https://www.linkedin.com/in/amaydle/" target="_blank" rel="noreferrer" class="p-2 hover:text-white transition-colors" aria-label="LinkedIn">
+        <a 
+          href="https://www.linkedin.com/in/amaydle/" 
+          target="_blank" 
+          rel="noreferrer" 
+          class="p-2 hover:text-[#483427] transition-colors" 
+          aria-label="LinkedIn"
+        >
           <Linkedin class="w-5 h-5" />
         </a>
-        <a href="mailto:amayauthsarani@gmail.com" class="p-2 hover:text-white transition-colors" aria-label="Email">
+        <a 
+          href="mailto:amayauthsarani@gmail.com" 
+          class="p-2 hover:text-[#483427] transition-colors" 
+          aria-label="Email"
+        >
           <Mail class="w-5 h-5" />
         </a>
       </div>
     </div>
   </header>
 
-  <main class="max-w-5xl mx-auto px-6 py-12 space-y-24">
+  <main class="max-w-4xl mx-auto px-6 py-12 space-y-20">
     <!-- Hero Section -->
-    <section class="pt-8 pb-4 space-y-6">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-emerald-950/70 text-emerald-400 border border-emerald-800/60">
+    <section class="pt-6 pb-2 space-y-8">
+      <!-- Status Pill -->
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-medium bg-[#FCEBF0] text-[#483427] border border-[#F2C2CC]">
         <span class="relative flex h-2 w-2">
-          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-          <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#F2C2CC] opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-[#E599AC]"></span>
         </span>
-        Available for opportunities & collaboration
+        available for opportunities & collaboration
       </div>
 
+      <!-- Hero Greeting & Intro -->
       <div class="space-y-4">
-        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-neutral-100">
-          Hi, I'm <span class="bg-gradient-to-r from-sky-400 via-indigo-300 to-purple-400 bg-clip-text text-transparent">Amaya Kahada Gamage</span>
+        <h1 class="text-3xl sm:text-5xl font-bold tracking-tight text-[#483427] leading-tight">
+          Hi, I'm <span class="underline decoration-[#88BAE0] decoration-wavy decoration-2 underline-offset-8">Amaya Kahada Gamage</span>
         </h1>
-        <p class="text-lg sm:text-xl text-neutral-400 max-w-2xl leading-relaxed">
-          Software engineer and developer passionate about crafting robust applications, exploring intelligent systems, and building clean, purposeful user experiences.
+        <p class="text-base sm:text-lg text-[#7E695A] max-w-2xl leading-relaxed">
+          Software engineer and developer creating thoughtful code, exploring intelligent systems, and designing warm, intuitive experiences.
         </p>
       </div>
 
-      <div class="flex flex-wrap gap-4 pt-2">
+      <!-- Call to Actions -->
+      <div class="flex flex-wrap gap-3 pt-2">
         <a 
           href="#projects" 
-          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-sky-500 hover:bg-sky-400 text-neutral-950 font-semibold text-sm transition-all shadow-lg shadow-sky-500/20"
+          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-md bg-[#88BAE0] hover:bg-[#72A9D6] text-[#483427] font-bold text-sm transition-all shadow-sm"
         >
-          View Projects
+          view projects
           <ArrowUpRight class="w-4 h-4" />
         </a>
         <a 
           href="mailto:amayauthsarani@gmail.com" 
-          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-neutral-900 hover:bg-neutral-800 text-neutral-200 border border-neutral-800 font-medium text-sm transition-colors"
+          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-md bg-[#FFFDF8] hover:bg-[#FDF6E4] text-[#483427] border border-[#E4D5C1] font-medium text-sm transition-colors shadow-sm"
         >
-          <Mail class="w-4 h-4" />
-          Get in Touch
+          <Mail class="w-4 h-4 text-[#88BAE0]" />
+          get in touch
         </a>
       </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="space-y-6 scroll-mt-20">
-      <div class="flex items-center gap-2 text-sky-400 font-mono text-sm">
-        <Sparkles class="w-4 h-4" />
-        <span>About Me</span>
+      <div class="flex items-center gap-2 text-[#483427] text-sm font-bold tracking-wide">
+        <span class="text-[#F2C2CC]">//</span>
+        <span>01. ABOUT ME</span>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="md:col-span-2 space-y-4 text-neutral-300 leading-relaxed text-base">
-          <p>
-            I'm a developer who enjoys solving difficult problems and turning complex ideas into intuitive, elegant digital products. My interests span across full-stack engineering, interactive frontend applications, and machine learning research.
+        <div class="md:col-span-2 space-y-4 text-[#483427] leading-relaxed text-sm sm:text-base">
+          <p class="p-6 rounded-lg bg-[#FFFDF8] border border-[#E8D9C5] shadow-sm">
+            I'm a developer who enjoys solving complex problems and turning ideas into clean, functional, and visually inviting software. My interests bridge full-stack engineering, creative user interfaces, and machine learning research.
           </p>
-          <p>
-            When tackling a project, I prioritize clean architecture, performant code, and an intuitive developer and user experience. I enjoy experimenting with new web technologies, automating workflows, and diving into research.
+          <p class="p-6 rounded-lg bg-[#FFFDF8] border border-[#E8D9C5] shadow-sm">
+            When building, I look for elegance in both architecture and interaction: clean code under the hood, and a warm, delightful feel on the surface.
           </p>
         </div>
 
-        <div class="p-5 rounded-xl bg-neutral-900/60 border border-neutral-800/80 space-y-3">
-          <h3 class="text-sm font-semibold text-neutral-200 uppercase tracking-wider">Quick Info</h3>
-          <ul class="text-sm text-neutral-400 space-y-2">
-            <li><strong class="text-neutral-300 font-medium">Location:</strong> Worldwide / Remote</li>
-            <li><strong class="text-neutral-300 font-medium">Focus:</strong> Full-Stack & Systems</li>
-            <li><strong class="text-neutral-300 font-medium">Interests:</strong> Web Dev, AI/RL, Design</li>
-          </ul>
+        <!-- Quick Info Note Card -->
+        <div class="p-6 rounded-lg bg-[#FFFDF8] border border-[#E8D9C5] shadow-sm space-y-4 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#7E695A] pb-2 border-b border-[#E8D9C5]">
+              <FileText class="w-4 h-4 text-[#88BAE0]" />
+              Quick Notes
+            </div>
+            <ul class="text-xs sm:text-sm text-[#483427] space-y-3 pt-3">
+              <li>
+                <span class="text-[#7E695A]">location:</span> Remote / Worldwide
+              </li>
+              <li>
+                <span class="text-[#7E695A]">focus:</span> Full-Stack & Systems
+              </li>
+              <li>
+                <span class="text-[#7E695A]">interests:</span> Web, AI/RL, Art & UI
+              </li>
+            </ul>
+          </div>
+
+          <div class="pt-4 border-t border-[#E8D9C5] text-xs text-[#7E695A] flex items-center gap-1.5">
+            <Heart class="w-3.5 h-3.5 text-[#F2C2CC] fill-[#F2C2CC]" />
+            <span>art + code</span>
+          </div>
         </div>
       </div>
     </section>
@@ -171,49 +205,61 @@ const skillCategories = [
     <!-- Projects Section -->
     <section id="projects" class="space-y-6 scroll-mt-20">
       <div class="flex items-center justify-between">
-        <div class="flex items-center gap-2 text-sky-400 font-mono text-sm">
-          <FolderGit2 class="w-4 h-4" />
-          <span>Featured Projects</span>
+        <div class="flex items-center gap-2 text-[#483427] text-sm font-bold tracking-wide">
+          <span class="text-[#88BAE0]">//</span>
+          <span>02. FEATURED PROJECTS</span>
         </div>
         <a 
           href="https://github.com/amaydle" 
           target="_blank" 
           rel="noreferrer" 
-          class="text-xs text-neutral-400 hover:text-sky-400 inline-flex items-center gap-1 transition-colors"
+          class="text-xs text-[#7E695A] hover:text-[#483427] inline-flex items-center gap-1 transition-colors"
         >
-          See more on GitHub <ArrowUpRight class="w-3.5 h-3.5" />
+          github.com/amaydle <ArrowUpRight class="w-3.5 h-3.5" />
         </a>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {projects.map((project) => (
-          <div class="group flex flex-col justify-between p-6 rounded-xl bg-neutral-900/50 border border-neutral-800/80 hover:border-neutral-700 hover:bg-neutral-900/80 transition-all duration-200">
+          <div class="group flex flex-col justify-between p-6 rounded-lg bg-[#FFFDF8] border border-[#E8D9C5] hover:border-[#88BAE0] hover:shadow-md transition-all duration-200">
             <div class="space-y-3">
               <div class="flex items-center justify-between">
-                <h3 class="font-semibold text-lg text-neutral-100 group-hover:text-sky-400 transition-colors">
+                <h3 class="font-bold text-base sm:text-lg text-[#483427] group-hover:text-[#88BAE0] transition-colors">
                   {project.title}
                 </h3>
-                <div class="flex items-center gap-2 text-neutral-400">
+                <div class="flex items-center gap-2 text-[#7E695A]">
                   {project.github && (
-                    <a href={project.github} target="_blank" rel="noreferrer" class="p-1 hover:text-white transition-colors" aria-label={`GitHub repo for ${project.title}`}>
+                    <a 
+                      href={project.github} 
+                      target="_blank" 
+                      rel="noreferrer" 
+                      class="p-1 hover:text-[#483427] transition-colors" 
+                      aria-label={`GitHub repo for ${project.title}`}
+                    >
                       <Github class="w-4 h-4" />
                     </a>
                   )}
                   {project.demo && (
-                    <a href={project.demo} target="_blank" rel="noreferrer" class="p-1 hover:text-white transition-colors" aria-label={`Live demo for ${project.title}`}>
+                    <a 
+                      href={project.demo} 
+                      target="_blank" 
+                      rel="noreferrer" 
+                      class="p-1 hover:text-[#483427] transition-colors" 
+                      aria-label={`Live demo for ${project.title}`}
+                    >
                       <ExternalLink class="w-4 h-4" />
                     </a>
                   )}
                 </div>
               </div>
-              <p class="text-neutral-400 text-sm leading-relaxed">
+              <p class="text-[#7E695A] text-xs sm:text-sm leading-relaxed">
                 {project.description}
               </p>
             </div>
 
             <div class="flex flex-wrap gap-2 pt-4 mt-2">
               {project.tags.map((tag) => (
-                <span class="px-2.5 py-0.5 text-xs rounded-md bg-neutral-800/70 text-neutral-300 font-mono border border-neutral-700/50">
+                <span class="px-2.5 py-1 text-xs rounded bg-[#FCF7E6] text-[#483427] border border-[#E8D9C5]">
                   {tag}
                 </span>
               ))}
@@ -225,22 +271,22 @@ const skillCategories = [
 
     <!-- Skills Section -->
     <section id="skills" class="space-y-6 scroll-mt-20">
-      <div class="flex items-center gap-2 text-sky-400 font-mono text-sm">
-        <Code2 class="w-4 h-4" />
-        <span>Skills & Technologies</span>
+      <div class="flex items-center gap-2 text-[#483427] text-sm font-bold tracking-wide">
+        <span class="text-[#F2C2CC]">//</span>
+        <span>03. SKILLS & TOOLBOX</span>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
         {skillCategories.map((group) => (
-          <div class="p-5 rounded-xl bg-neutral-900/40 border border-neutral-800/80 space-y-3">
-            <h3 class="text-sm font-semibold text-neutral-200 font-mono tracking-wide">
+          <div class="p-5 rounded-lg bg-[#FFFDF8] border border-[#E8D9C5] space-y-3 shadow-sm">
+            <h3 class="text-xs font-bold uppercase tracking-wider text-[#483427] pb-2 border-b border-[#E8D9C5]">
               {group.category}
             </h3>
-            <ul class="space-y-2 text-sm text-neutral-400">
+            <ul class="space-y-2 text-xs sm:text-sm text-[#7E695A]">
               {group.skills.map((skill) => (
                 <li class="flex items-center gap-2">
-                  <span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>
-                  <span>{skill}</span>
+                  <span class="text-[#88BAE0] font-bold">&gt;</span>
+                  <span class="text-[#483427]">{skill}</span>
                 </li>
               ))}
             </ul>
@@ -251,20 +297,24 @@ const skillCategories = [
 
     <!-- Contact Section -->
     <section id="contact" class="space-y-6 scroll-mt-20">
-      <div class="p-8 sm:p-12 rounded-2xl bg-gradient-to-b from-neutral-900 to-neutral-950 border border-neutral-800 text-center space-y-6">
-        <div class="max-w-xl mx-auto space-y-3">
-          <h2 class="text-2xl sm:text-3xl font-bold text-neutral-100">
-            Let's build something together
+      <div class="p-8 sm:p-12 rounded-lg bg-[#FFFDF8] border border-[#E8D9C5] text-center space-y-6 shadow-sm">
+        <div class="max-w-md mx-auto space-y-3">
+          <div class="inline-flex items-center gap-1.5 text-xs text-[#F2C2CC] font-bold">
+            <Sparkles class="w-3.5 h-3.5 text-[#88BAE0]" />
+            <span>// 04. GET IN TOUCH</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-bold text-[#483427]">
+            Say hello :)
           </h2>
-          <p class="text-neutral-400 text-sm sm:text-base leading-relaxed">
-            Whether you have an inquiry, an interesting project, or just want to say hi, my inbox is always open.
+          <p class="text-[#7E695A] text-xs sm:text-sm leading-relaxed">
+            Have a question, a project idea, or just want to chat about tech or art? My inbox is always open.
           </p>
         </div>
 
-        <div class="flex flex-wrap justify-center gap-4">
+        <div class="flex flex-wrap justify-center gap-3 pt-2">
           <a 
             href="mailto:amayauthsarani@gmail.com" 
-            class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-sky-500 hover:bg-sky-400 text-neutral-950 font-semibold text-sm transition-all shadow-lg shadow-sky-500/20"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-[#88BAE0] hover:bg-[#72A9D6] text-[#483427] font-bold text-sm transition-all shadow-sm"
           >
             <Mail class="w-4 h-4" />
             amayauthsarani@gmail.com
@@ -273,10 +323,10 @@ const skillCategories = [
             href="https://www.linkedin.com/in/amaydle/" 
             target="_blank" 
             rel="noreferrer" 
-            class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-neutral-900 hover:bg-neutral-800 text-neutral-200 border border-neutral-800 font-medium text-sm transition-colors"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-[#FCF7E6] hover:bg-[#FDF6E4] text-[#483427] border border-[#E4D5C1] font-medium text-sm transition-colors shadow-sm"
           >
-            <Linkedin class="w-4 h-4" />
-            Connect on LinkedIn
+            <Linkedin class="w-4 h-4 text-[#88BAE0]" />
+            LinkedIn
           </a>
         </div>
       </div>
@@ -284,12 +334,11 @@ const skillCategories = [
   </main>
 
   <!-- Footer -->
-  <footer class="border-t border-neutral-800/80 py-8 text-center text-xs text-neutral-500">
-    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p>© {new Date().getFullYear()} Amaya Kahada Gamage. All rights reserved.</p>
-      <p class="flex items-center gap-2">
-        Built with <a href="https://astro.build" target="_blank" rel="noreferrer" class="text-neutral-400 hover:text-white transition-colors">Astro</a> & 
-        <a href="https://tailwindcss.com" target="_blank" rel="noreferrer" class="text-neutral-400 hover:text-white transition-colors">Tailwind CSS</a>
+  <footer class="border-t border-[#E8D9C5] py-8 text-center text-xs text-[#7E695A]">
+    <div class="max-w-4xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>© {new Date().getFullYear()} Amaya Kahada Gamage</p>
+      <p class="flex items-center gap-1.5">
+        crafted with <Heart class="w-3 h-3 text-[#F2C2CC] fill-[#F2C2CC]" /> using Astro & Tailwind
       </p>
     </div>
   </footer>
