@@ -87,7 +87,7 @@ const skillCategories = [
               </div>
               
               <div class="space-y-1.5 max-w-xs">
-                <p class="font-serif font-bold text-base text-neutral-900 tracking-tight">
+                <p class="font-semibold text-base text-neutral-900 tracking-tight">
                   doodle illustration space
                 </p>
                 <p class="text-xs text-neutral-500 leading-relaxed">
@@ -106,13 +106,13 @@ const skillCategories = [
 
         <!-- Right Side: Intro & I like xyz -->
         <div class="md:col-span-6 space-y-6 order-1 md:order-2">
-          <h1 class="text-4xl sm:text-6xl font-serif font-bold tracking-tight text-neutral-950 leading-[1.1]">
-            Hi, I'm <span class="italic underline decoration-neutral-300 underline-offset-8">Amaya</span>
+          <h1 class="text-4xl sm:text-6xl font-bold tracking-tight text-neutral-950 leading-[1.1]">
+            Hi, I'm <span>Amaya</span>
           </h1>
 
           <!-- "I like xyz" Card -->
           <div class="p-6 rounded-xl bg-white border border-neutral-200/90 shadow-xs space-y-3.5">
-            <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-neutral-500 pb-2 border-b border-neutral-100">
+            <div class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-neutral-500 pb-2 border-b border-neutral-100">
               <Sparkles class="w-3.5 h-3.5 text-neutral-700" />
               <span>things I like</span>
             </div>
@@ -188,8 +188,8 @@ const skillCategories = [
     <!-- About Section -->
     <section id="about" class="space-y-7 scroll-mt-12">
       <div class="flex items-center gap-3">
-        <span class="font-serif italic text-lg text-neutral-400">01</span>
-        <h2 class="font-serif text-2xl sm:text-3xl font-bold text-neutral-950">About Me</h2>
+        <span class="text-xs font-semibold tracking-wider text-neutral-400">01</span>
+        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-950">About Me</h2>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -205,7 +205,7 @@ const skillCategories = [
         <!-- Quick Info Note Card -->
         <div class="p-7 rounded-xl bg-white border border-neutral-200/90 shadow-xs space-y-5 flex flex-col justify-between">
           <div>
-            <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-neutral-500 pb-3 border-b border-neutral-100">
+            <div class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-neutral-500 pb-3 border-b border-neutral-100">
               <FileText class="w-4 h-4 text-neutral-700" />
               Quick Notes
             </div>
@@ -237,8 +237,8 @@ const skillCategories = [
     <section id="projects" class="space-y-7 scroll-mt-12">
       <div class="flex items-center justify-between">
         <div class="flex items-center gap-3">
-          <span class="font-serif italic text-lg text-neutral-400">02</span>
-          <h2 class="font-serif text-2xl sm:text-3xl font-bold text-neutral-950">Featured Projects</h2>
+          <span class="text-xs font-semibold tracking-wider text-neutral-400">02</span>
+          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-950">Featured Projects</h2>
         </div>
         <a 
           href="https://github.com/amaydle" 
@@ -252,10 +252,10 @@ const skillCategories = [
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {projects.map((project) => (
-          <div class="group flex flex-col justify-between p-7 rounded-xl bg-white border border-neutral-200/90 hover:border-neutral-400 hover:shadow-sm transition-all duration-200">
+          <div class="group flex flex-col justify-between p-7 rounded-xl bg-white border border-neutral-200/90 hover:border-neutral-400 hover:shadow-xs transition-all duration-200">
             <div class="space-y-3">
               <div class="flex items-center justify-between">
-                <h3 class="font-serif font-bold text-lg text-neutral-950 group-hover:text-neutral-700 transition-colors">
+                <h3 class="font-bold text-lg tracking-tight text-neutral-950 group-hover:text-neutral-700 transition-colors">
                   {project.title}
                 </h3>
                 <div class="flex items-center gap-2 text-neutral-400">
@@ -303,14 +303,14 @@ const skillCategories = [
     <!-- Skills Section -->
     <section id="skills" class="space-y-7 scroll-mt-12">
       <div class="flex items-center gap-3">
-        <span class="font-serif italic text-lg text-neutral-400">03</span>
-        <h2 class="font-serif text-2xl sm:text-3xl font-bold text-neutral-950">Skills & Toolbox</h2>
+        <span class="text-xs font-semibold tracking-wider text-neutral-400">03</span>
+        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-950">Skills & Toolbox</h2>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
         {skillCategories.map((group) => (
           <div class="p-6 rounded-xl bg-white border border-neutral-200/90 space-y-4 shadow-xs">
-            <h3 class="font-serif font-bold text-sm text-neutral-950 pb-2.5 border-b border-neutral-100">
+            <h3 class="font-bold text-sm tracking-tight text-neutral-950 pb-2.5 border-b border-neutral-100">
               {group.category}
             </h3>
             <ul class="space-y-2.5 text-sm text-neutral-600">
@@ -334,7 +334,7 @@ const skillCategories = [
             <Sparkles class="w-3.5 h-3.5 text-neutral-700" />
             <span>04 / Get In Touch</span>
           </div>
-          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-neutral-950">
+          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-neutral-950">
             Say hello :)
           </h2>
           <p class="text-neutral-600 text-sm leading-relaxed">
