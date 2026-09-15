@@ -10,7 +10,8 @@ import {
   ArrowUpRight,
   Sparkles,
   Heart,
-  FileText
+  FileText,
+  Trees
 } from 'lucide-astro';
 
 const projects = [
@@ -116,35 +117,105 @@ const skillCategories = [
     </div>
   </header>
 
-  <main class="max-w-4xl mx-auto px-6 py-12 space-y-20">
-    <!-- Hero Section -->
-    <section class="pt-6 pb-2 space-y-8">
-      <!-- Hero Greeting & Intro -->
-      <div class="space-y-4">
-        <h1 class="text-3xl sm:text-5xl font-bold tracking-tight text-[#483427] leading-tight">
-          Hi, I'm <span class="underline decoration-[#88BAE0] decoration-wavy decoration-2 underline-offset-8">Amaya</span>
-        </h1>
-        <p class="text-base sm:text-lg text-[#7E695A] max-w-2xl leading-relaxed">
-          Software engineer and developer creating thoughtful code, exploring intelligent systems, and designing warm, intuitive experiences.
-        </p>
+  <main class="max-w-5xl mx-auto px-6 space-y-24">
+    <!-- Fullscreen Hero Section -->
+    <section class="min-h-[calc(100vh-4rem)] flex flex-col justify-between pt-4 pb-8">
+      <div class="my-auto grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-14 items-center">
+        
+        <!-- Left Side: Doodle Illustration Space (Under a tree) -->
+        <div class="md:col-span-6 flex justify-center order-2 md:order-1">
+          <div class="relative w-full max-w-sm sm:max-w-md aspect-square rounded-2xl bg-[#FFFDF8] border-2 border-dashed border-[#DCCABA] p-6 flex flex-col items-center justify-center text-center shadow-sm overflow-hidden group">
+            
+            <!-- Subtle decorative background accents -->
+            <div class="absolute -top-6 -right-6 w-32 h-32 rounded-full bg-[#FCF7E6] opacity-60 pointer-events-none"></div>
+            <div class="absolute -bottom-10 -left-10 w-36 h-36 rounded-full bg-[#FCEBF0] opacity-40 pointer-events-none"></div>
+
+            <!-- Illustration placeholder / Drop-in target -->
+            <div class="relative z-10 flex flex-col items-center space-y-4">
+              <div class="w-16 h-16 rounded-2xl bg-[#FCF7E6] border border-[#E8D9C5] flex items-center justify-center text-[#88BAE0] shadow-sm group-hover:scale-105 transition-transform">
+                <Trees class="w-8 h-8 text-[#88BAE0]" />
+              </div>
+              
+              <div class="space-y-1.5 max-w-xs">
+                <p class="font-bold text-sm text-[#483427] tracking-tight">
+                  // doodle: me under a tree
+                </p>
+                <p class="text-xs text-[#7E695A] leading-relaxed">
+                  sitting under a tree with my scarf & sweater :)
+                </p>
+              </div>
+
+              <div class="pt-1">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-[11px] font-mono bg-[#FCF7E6] text-[#7E695A] border border-[#E8D9C5]">
+                  <span>ready for illustration</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Intro & I like xyz -->
+        <div class="md:col-span-6 space-y-6 order-1 md:order-2">
+          <div class="space-y-2">
+            <span class="text-xs font-bold text-[#88BAE0] tracking-wider uppercase">
+              // welcome to my space
+            </span>
+            <h1 class="text-3xl sm:text-5xl font-bold tracking-tight text-[#483427] leading-tight">
+              Hi, I'm <span class="underline decoration-[#88BAE0] decoration-wavy decoration-2 underline-offset-8">Amaya</span>
+            </h1>
+          </div>
+
+          <!-- "I like xyz" Card -->
+          <div class="p-5 rounded-lg bg-[#FFFDF8] border border-[#E8D9C5] shadow-sm space-y-3">
+            <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#7E695A] pb-2 border-b border-[#E8D9C5]">
+              <Sparkles class="w-3.5 h-3.5 text-[#88BAE0]" />
+              <span>things I like:</span>
+            </div>
+            <ul class="space-y-2 text-xs sm:text-sm text-[#7E695A]">
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#88BAE0] font-bold">&gt;</span>
+                <span class="text-[#483427]">building thoughtful software & creative user interfaces</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#F2C2CC] font-bold">&gt;</span>
+                <span class="text-[#483427]">doodling, analog film aesthetics, & design experiments</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#88BAE0] font-bold">&gt;</span>
+                <span class="text-[#483427]">exploring machine learning, algorithms, & quiet coffee shops</span>
+              </li>
+            </ul>
+          </div>
+
+          <p class="text-xs sm:text-sm text-[#7E695A] leading-relaxed">
+            Software engineer and developer creating thoughtful code, exploring intelligent systems, and designing warm, intuitive experiences.
+          </p>
+
+          <!-- Call to Actions -->
+          <div class="flex flex-wrap gap-3 pt-1">
+            <a 
+              href="#projects" 
+              class="inline-flex items-center gap-2 px-5 py-2.5 rounded-md bg-[#88BAE0] hover:bg-[#72A9D6] text-[#483427] font-bold text-sm transition-all shadow-sm"
+            >
+              view projects
+              <ArrowUpRight class="w-4 h-4" />
+            </a>
+            <a 
+              href="mailto:amayauthsarani@gmail.com" 
+              class="inline-flex items-center gap-2 px-5 py-2.5 rounded-md bg-[#FFFDF8] hover:bg-[#FDF6E4] text-[#483427] border border-[#E4D5C1] font-medium text-sm transition-colors shadow-sm"
+            >
+              <Mail class="w-4 h-4 text-[#88BAE0]" />
+              get in touch
+            </a>
+          </div>
+        </div>
+
       </div>
 
-      <!-- Call to Actions -->
-      <div class="flex flex-wrap gap-3 pt-2">
-        <a 
-          href="#projects" 
-          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-md bg-[#88BAE0] hover:bg-[#72A9D6] text-[#483427] font-bold text-sm transition-all shadow-sm"
-        >
-          view projects
-          <ArrowUpRight class="w-4 h-4" />
-        </a>
-        <a 
-          href="mailto:amayauthsarani@gmail.com" 
-          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-md bg-[#FFFDF8] hover:bg-[#FDF6E4] text-[#483427] border border-[#E4D5C1] font-medium text-sm transition-colors shadow-sm"
-        >
-          <Mail class="w-4 h-4 text-[#88BAE0]" />
-          get in touch
-        </a>
+      <!-- Scroll down indicator -->
+      <div class="pt-4 pb-2 text-center text-xs text-[#7E695A] flex flex-col items-center gap-1 opacity-70 hover:opacity-100 transition-opacity">
+        <span>scroll down</span>
+        <span class="animate-bounce text-[#88BAE0] text-sm">↓</span>
       </div>
     </section>
 
