@@ -73,7 +73,7 @@ const skillCategories = [
         
         <!-- Left Side: Doodle Illustration with Gentle Breeze Animation -->
         <div class="md:col-span-5 flex justify-center order-2 md:order-1">
-          <div class="relative flex flex-col items-center justify-center py-4">
+          <div class="relative flex flex-col items-center justify-center py-4 animate-levitate">
             <canvas 
               id="doodle-canvas" 
               class="w-64 sm:w-80 h-auto object-contain select-none cursor-pointer"
@@ -365,8 +365,9 @@ const skillCategories = [
           const anchorScarfX = 180; // scarf connects smoothly at neck collar without cutting body
           const anchorHairX = 175;  // hair lock tapers seamlessly into the back of head
 
-          // A slow, peaceful, natural breeze speed (no frantic rush)
-          const speed = 0.0011;
+          // Natural, fluid breeze speed & wave motion
+          const speed = 0.0017;
+          const scarfAmp = 5.2;
 
           for (let x = 0; x < img.width; x += sliceWidth) {
             const w = Math.min(sliceWidth, img.width - x);
@@ -375,19 +376,19 @@ const skillCategories = [
               // Face, star clip, and body are rendered completely solid and uncut (no horizontal seams)
               ctx.drawImage(img, x, 0, w, img.height, x, 0, w, img.height);
             } else {
-              // 1. Hair lock motion (upper zone in transparent gap: delicate flutter at back of head)
+              // 1. Hair lock motion (upper zone in transparent gap: gentle flutter at back of head)
               let hairDy = 0;
               if (x >= 140 && x < anchorHairX) {
                 const hairFactor = Math.pow((anchorHairX - x) / (anchorHairX - 140), 1.3);
-                hairDy = (Math.sin(time * (speed * 1.35) + x * 0.055) + Math.cos(time * (speed * 0.9) + x * 0.04) * 0.25) * 1.5 * hairFactor;
+                hairDy = (Math.sin(time * (speed * 1.35) + x * 0.055) + Math.cos(time * (speed * 0.85) + x * 0.04) * 0.25) * 2.2 * hairFactor;
               }
               ctx.drawImage(img, x, 0, w, splitY, x, hairDy, w, splitY);
 
-              // 2. Scarf wave (lower zone in transparent gap: graceful undulating sway)
-              const scarfFactor = Math.pow((anchorScarfX - x) / anchorScarfX, 1.35);
-              const wave1 = Math.sin(time * speed + x * 0.032);
-              const wave2 = Math.cos(time * (speed * 1.4) + x * 0.05) * 0.25;
-              const scarfDy = (wave1 + wave2) * scarfFactor * 3.8;
+              // 2. Scarf wave (lower zone in transparent gap: natural flowing cloth ripple)
+              const scarfFactor = Math.pow((anchorScarfX - x) / anchorScarfX, 1.3);
+              const wave1 = Math.sin(time * speed + x * 0.035);
+              const wave2 = Math.cos(time * (speed * 1.5) + x * 0.06) * 0.3;
+              const scarfDy = (wave1 + wave2) * scarfFactor * scarfAmp;
               ctx.drawImage(img, x, splitY, w, img.height - splitY, x, splitY + scarfDy, w, img.height - splitY);
             }
           }

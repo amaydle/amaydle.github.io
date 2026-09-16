@@ -30,3 +30,23 @@
     font-family: sans-serif;
   }
 }
+
+@keyframes doodle-levitate {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-levitate {
+  animation: doodle-levitate 4.2s ease-in-out infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-levitate {
+    animation: none;
+  }
+}
