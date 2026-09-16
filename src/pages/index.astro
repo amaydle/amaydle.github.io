@@ -71,14 +71,22 @@ const skillCategories = [
     <section class="min-h-[calc(100vh-8rem)] flex flex-col justify-between pb-12">
       <div class="my-auto grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 items-center">
         
-        <!-- Left Side: Doodle Illustration (Floating Seamlessly, No Boxes) -->
+        <!-- Left Side: Doodle Illustration with Gentle Breeze Animation -->
         <div class="md:col-span-5 flex justify-center order-2 md:order-1">
           <div class="relative flex flex-col items-center justify-center py-4">
-            <img 
-              src="/doodle.png" 
-              alt="Doodle of Amaya with scarf" 
-              class="w-64 sm:w-80 h-auto object-contain select-none"
-            />
+            <canvas 
+              id="doodle-canvas" 
+              class="w-64 sm:w-80 h-auto object-contain select-none cursor-pointer"
+              title="A gentle breeze..."
+              aria-label="Doodle of Amaya with her scarf swaying in a gentle breeze"
+            ></canvas>
+            <noscript>
+              <img 
+                src="/doodle.png" 
+                alt="Doodle of Amaya with scarf" 
+                class="w-64 sm:w-80 h-auto object-contain select-none"
+              />
+            </noscript>
           </div>
         </div>
 
@@ -315,3 +323,81 @@ const skillCategories = [
     </section>
   </main>
 </Layout>
+
+<script>
+  function initDoodleBreeze() {
+    const canvas = document.getElementById('doodle-canvas') as HTMLCanvasElement | null;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    const img = new Image();
+    img.src = '/doodle.png';
+
+    let isVisible = true;
+    let gust = 0;
+    let currentGust = 0;
+
+    // Pause when scrolled out of view to preserve battery/CPU
+    const observer = new IntersectionObserver((entries) => {
+      isVisible = entries[0]?.isIntersecting ?? true;
+    }, { threshold: 0.1 });
+    observer.observe(canvas);
+
+    // Playful interactive touch: hovering or clicking gently stirs the breeze
+    canvas.addEventListener('mouseenter', () => { gust = 0.8; });
+    canvas.addEventListener('mouseleave', () => { gust = 0; });
+    canvas.addEventListener('click', () => { gust = 1.5; setTimeout(() => { gust = 0; }, 1200); });
+
+    img.onload = () => {
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = img.width * dpr;
+      canvas.height = img.height * dpr;
+      canvas.style.aspectRatio = `${img.width} / ${img.height}`;
+      ctx.scale(dpr, dpr);
+
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReduced) {
+        ctx.drawImage(img, 0, 0);
+        return;
+      }
+
+      function render(time: number) {
+        if (isVisible) {
+          currentGust += (gust - currentGust) * 0.04;
+          ctx.clearRect(0, 0, img.width, img.height);
+
+          const sliceWidth = 2;
+          const anchorX = 225; // neck collar connection point
+
+          // Gentle speed and subtle displacement
+          const speed = 0.0018 + currentGust * 0.0015;
+          const baseAmp = 4.2 + currentGust * 4.0;
+
+          for (let x = 0; x < img.width; x += sliceWidth) {
+            const w = Math.min(sliceWidth, img.width - x);
+            let dy = 0;
+
+            if (x < anchorX) {
+              const factor = Math.pow((anchorX - x) / anchorX, 1.4);
+              // Primary harmonic wave + soft ripple
+              const wave1 = Math.sin(time * speed + x * 0.035);
+              const wave2 = Math.cos(time * (speed * 1.5) + x * 0.06) * 0.3;
+              dy = (wave1 + wave2) * factor * baseAmp;
+            }
+
+            ctx.drawImage(img, x, 0, w, img.height, x, dy, w, img.height);
+          }
+        }
+
+        requestAnimationFrame(render);
+      }
+
+      requestAnimationFrame(render);
+    };
+  }
+
+  initDoodleBreeze();
+  document.addEventListener('astro:page-load', initDoodleBreeze);
+</script>
