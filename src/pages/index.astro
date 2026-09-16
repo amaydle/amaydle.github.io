@@ -4,8 +4,7 @@ import {
   Github, 
   Linkedin, 
   Mail, 
-  ArrowUpRight,
-  Trees
+  ArrowUpRight
 } from 'lucide-astro';
 
 const projects = [
@@ -72,20 +71,14 @@ const skillCategories = [
     <section class="min-h-[calc(100vh-8rem)] flex flex-col justify-between pb-12">
       <div class="my-auto grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 items-center">
         
-        <!-- Left Side: Doodle Illustration Space (Floating Seamlessly, No Boxes) -->
+        <!-- Left Side: Doodle Illustration (Floating Seamlessly, No Boxes) -->
         <div class="md:col-span-5 flex justify-center order-2 md:order-1">
-          <div class="relative flex flex-col items-center justify-center text-center space-y-4 py-8">
-            <div class="w-28 h-28 rounded-full bg-[#EFEAE1] flex items-center justify-center text-[#141414]">
-              <Trees class="w-14 h-14 text-[#7EA5C4]" />
-            </div>
-            <div class="space-y-1">
-              <p class="font-medium text-[15px] text-[#141414]">
-                doodle illustration space
-              </p>
-              <p class="text-[13px] text-[#666666] leading-relaxed">
-                me under a tree with my scarf & sweater :)
-              </p>
-            </div>
+          <div class="relative flex flex-col items-center justify-center py-4">
+            <img 
+              src="/doodle.png" 
+              alt="Doodle of Amaya with scarf" 
+              class="w-64 sm:w-80 h-auto object-contain select-none"
+            />
           </div>
         </div>
 
