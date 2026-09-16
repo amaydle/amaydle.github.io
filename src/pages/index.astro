@@ -336,19 +336,12 @@ const skillCategories = [
     img.src = '/doodle.png';
 
     let isVisible = true;
-    let gust = 0;
-    let currentGust = 0;
 
     // Pause when scrolled out of view to preserve battery/CPU
     const observer = new IntersectionObserver((entries) => {
       isVisible = entries[0]?.isIntersecting ?? true;
     }, { threshold: 0.1 });
     observer.observe(canvas);
-
-    // Playful interactive touch: hovering or clicking gently stirs the breeze
-    canvas.addEventListener('mouseenter', () => { gust = 0.8; });
-    canvas.addEventListener('mouseleave', () => { gust = 0; });
-    canvas.addEventListener('click', () => { gust = 1.5; setTimeout(() => { gust = 0; }, 1200); });
 
     img.onload = () => {
       const dpr = window.devicePixelRatio || 1;
@@ -365,29 +358,36 @@ const skillCategories = [
 
       function render(time: number) {
         if (isVisible) {
-          currentGust += (gust - currentGust) * 0.04;
           ctx.clearRect(0, 0, img.width, img.height);
 
           const sliceWidth = 2;
-          const anchorX = 225; // neck collar connection point
+          const splitY = 106; // boundary between hair locks and scarf
+          const anchorScarfX = 225; // neck collar connection
+          const anchorHairX = 205;  // forehead connection
 
-          // Gentle speed and subtle displacement
-          const speed = 0.0018 + currentGust * 0.0015;
-          const baseAmp = 4.2 + currentGust * 4.0;
+          // A slow, peaceful, natural breeze speed (no frantic rush)
+          const speed = 0.0011;
 
           for (let x = 0; x < img.width; x += sliceWidth) {
             const w = Math.min(sliceWidth, img.width - x);
-            let dy = 0;
 
-            if (x < anchorX) {
-              const factor = Math.pow((anchorX - x) / anchorX, 1.4);
-              // Primary harmonic wave + soft ripple
-              const wave1 = Math.sin(time * speed + x * 0.035);
-              const wave2 = Math.cos(time * (speed * 1.5) + x * 0.06) * 0.3;
-              dy = (wave1 + wave2) * factor * baseAmp;
+            // 1. Hair lock motion (upper zone: lighter, delicate hair flutter)
+            let hairDy = 0;
+            if (x < anchorHairX) {
+              const hairFactor = Math.pow(Math.max(0, (anchorHairX - x) / 55), 1.2);
+              hairDy = (Math.sin(time * (speed * 1.35) + x * 0.055) + Math.cos(time * (speed * 0.9) + x * 0.04) * 0.25) * 1.8 * hairFactor;
             }
+            ctx.drawImage(img, x, 0, w, splitY, x, hairDy, w, splitY);
 
-            ctx.drawImage(img, x, 0, w, img.height, x, dy, w, img.height);
+            // 2. Scarf wave (lower zone: graceful, undulating fabric sway)
+            let scarfDy = 0;
+            if (x < anchorScarfX) {
+              const scarfFactor = Math.pow((anchorScarfX - x) / anchorScarfX, 1.35);
+              const wave1 = Math.sin(time * speed + x * 0.032);
+              const wave2 = Math.cos(time * (speed * 1.4) + x * 0.05) * 0.25;
+              scarfDy = (wave1 + wave2) * scarfFactor * 3.8;
+            }
+            ctx.drawImage(img, x, splitY, w, img.height - splitY, x, splitY + scarfDy, w, img.height - splitY);
           }
         }
 
