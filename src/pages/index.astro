@@ -4,7 +4,6 @@ import {
   Github, 
   Linkedin, 
   Mail, 
-  ExternalLink, 
   ArrowUpRight,
   Trees
 } from 'lucide-astro';
@@ -76,14 +75,14 @@ const skillCategories = [
         <!-- Left Side: Doodle Illustration Space (Floating Seamlessly, No Boxes) -->
         <div class="md:col-span-5 flex justify-center order-2 md:order-1">
           <div class="relative flex flex-col items-center justify-center text-center space-y-4 py-8">
-            <div class="w-28 h-28 rounded-full bg-neutral-200/50 flex items-center justify-center text-neutral-800">
-              <Trees class="w-14 h-14 text-neutral-700" />
+            <div class="w-28 h-28 rounded-full bg-[#EFEAE1] flex items-center justify-center text-[#141414]">
+              <Trees class="w-14 h-14 text-[#7EA5C4]" />
             </div>
             <div class="space-y-1">
-              <p class="font-semibold text-sm text-neutral-900 tracking-tight">
+              <p class="font-medium text-[15px] text-[#141414]">
                 doodle illustration space
               </p>
-              <p class="text-xs text-neutral-500 leading-relaxed">
+              <p class="text-[13px] text-[#666666] leading-relaxed">
                 me under a tree with my scarf & sweater :)
               </p>
             </div>
@@ -92,32 +91,32 @@ const skillCategories = [
 
         <!-- Right Side: Intro & I like xyz (Seamless Flow) -->
         <div class="md:col-span-7 space-y-6 order-1 md:order-2">
-          <h1 class="text-4xl sm:text-6xl font-bold tracking-tight text-neutral-950 leading-tight">
+          <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-[#141414]">
             Hi, I'm Amaya
           </h1>
 
           <!-- Things I Like (Seamless List) -->
-          <div class="space-y-2.5 pt-1">
-            <p class="text-xs font-semibold uppercase tracking-wider text-neutral-400">
+          <div class="space-y-2 pt-1">
+            <p class="text-xs font-semibold uppercase tracking-wider text-[#666666]">
               things I like
             </p>
-            <ul class="space-y-2 text-sm text-neutral-700">
+            <ul class="space-y-2 text-[15px] text-[#141414]">
               <li class="flex items-start gap-2.5">
-                <span class="text-neutral-400 select-none">•</span>
+                <span class="text-[#7EA5C4] select-none">•</span>
                 <span>crafting thoughtful web applications & playful interfaces</span>
               </li>
               <li class="flex items-start gap-2.5">
-                <span class="text-neutral-400 select-none">•</span>
+                <span class="text-[#E29BA8] select-none">•</span>
                 <span>doodling, analog film photography, & design experiments</span>
               </li>
               <li class="flex items-start gap-2.5">
-                <span class="text-neutral-400 select-none">•</span>
+                <span class="text-[#7EA5C4] select-none">•</span>
                 <span>exploring machine learning, algorithms, & cozy coffee shops</span>
               </li>
             </ul>
           </div>
 
-          <p class="text-sm text-neutral-600 leading-relaxed max-w-lg">
+          <p class="text-[15px] text-[#666666] leading-relaxed max-w-lg">
             Software engineer and developer creating thoughtful code, exploring intelligent systems, and designing warm, intuitive experiences.
           </p>
 
@@ -125,25 +124,25 @@ const skillCategories = [
           <div class="flex flex-wrap items-center gap-3 pt-2">
             <a 
               href="#projects" 
-              class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-neutral-950 hover:bg-neutral-800 text-white font-medium text-sm transition-colors"
+              class="inline-flex items-center gap-2 px-5 py-2.5 rounded-md bg-[#141414] hover:bg-[#2c2c2c] text-white font-medium text-sm transition-colors"
             >
               view projects
               <ArrowUpRight class="w-4 h-4" />
             </a>
             <a 
               href="mailto:amayauthsarani@gmail.com" 
-              class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-transparent hover:bg-neutral-200/50 text-neutral-900 border border-neutral-300 font-medium text-sm transition-colors"
+              class="inline-flex items-center gap-2 px-5 py-2.5 rounded-md bg-transparent hover:bg-neutral-200/50 text-[#141414] border border-[#d8d3c8] font-medium text-sm transition-colors"
             >
               <Mail class="w-4 h-4" />
               get in touch
             </a>
 
-            <div class="flex items-center space-x-1 pl-2 text-neutral-500 border-l border-neutral-300">
+            <div class="flex items-center space-x-1 pl-2 text-[#666666] border-l border-[#d8d3c8]">
               <a 
                 href="https://github.com/amaydle" 
                 target="_blank" 
                 rel="noreferrer" 
-                class="p-2 hover:text-black transition-colors" 
+                class="p-2 hover:text-[#7EA5C4] transition-colors" 
                 aria-label="GitHub"
               >
                 <Github class="w-5 h-5" />
@@ -152,7 +151,7 @@ const skillCategories = [
                 href="https://www.linkedin.com/in/amaydle/" 
                 target="_blank" 
                 rel="noreferrer" 
-                class="p-2 hover:text-black transition-colors" 
+                class="p-2 hover:text-[#7EA5C4] transition-colors" 
                 aria-label="LinkedIn"
               >
                 <Linkedin class="w-5 h-5" />
@@ -164,21 +163,21 @@ const skillCategories = [
       </div>
 
       <!-- Scroll down indicator -->
-      <div class="pt-6 pb-2 text-center text-xs text-neutral-400 flex flex-col items-center gap-1 opacity-70 hover:opacity-100 transition-opacity">
+      <div class="pt-6 pb-2 text-center text-xs text-[#666666] flex flex-col items-center gap-1 opacity-70 hover:opacity-100 transition-opacity">
         <span>scroll down</span>
-        <span class="animate-bounce text-neutral-600 text-sm">↓</span>
+        <span class="animate-bounce text-[#7EA5C4] text-sm">↓</span>
       </div>
     </section>
 
     <!-- About Section (Seamless) -->
     <section id="about" class="space-y-6 scroll-mt-16">
-      <div class="flex items-center gap-3 border-b border-neutral-200/80 pb-3">
-        <span class="text-xs font-semibold tracking-wider text-neutral-400">01</span>
-        <h2 class="text-xl font-bold tracking-tight text-neutral-950">About Me</h2>
+      <div class="flex items-center gap-3 border-b border-[#E5E0D5] pb-3">
+        <span class="text-xs font-semibold tracking-wider text-[#666666]">01</span>
+        <h2 class="text-lg font-bold text-[#141414]">About Me</h2>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-12 gap-8 pt-2">
-        <div class="md:col-span-8 space-y-4 text-neutral-700 leading-relaxed text-sm sm:text-base">
+        <div class="md:col-span-8 space-y-4 text-[#141414] leading-relaxed text-[15px]">
           <p>
             I'm a developer who enjoys solving complex problems and turning ideas into clean, functional, and visually inviting software. My interests bridge full-stack engineering, creative user interfaces, and machine learning research.
           </p>
@@ -187,12 +186,12 @@ const skillCategories = [
           </p>
         </div>
 
-        <div class="md:col-span-4 space-y-3 text-xs sm:text-sm text-neutral-600 md:border-l md:border-neutral-200/80 md:pl-6">
-          <p class="font-semibold text-xs uppercase tracking-wider text-neutral-400">Quick Notes</p>
-          <ul class="space-y-2">
-            <li><span class="text-neutral-400 block text-xs">location</span>Remote / Worldwide</li>
-            <li><span class="text-neutral-400 block text-xs">focus</span>Full-Stack & Systems</li>
-            <li><span class="text-neutral-400 block text-xs">interests</span>Web, AI/RL, Art & UI</li>
+        <div class="md:col-span-4 space-y-3 text-sm text-[#666666] md:border-l md:border-[#E5E0D5] md:pl-6">
+          <p class="font-semibold text-xs uppercase tracking-wider text-[#666666]">Quick Notes</p>
+          <ul class="space-y-2 text-[14px]">
+            <li><span class="text-[#888888] block text-xs">location</span>Remote / Worldwide</li>
+            <li><span class="text-[#888888] block text-xs">focus</span>Full-Stack & Systems</li>
+            <li><span class="text-[#888888] block text-xs">interests</span>Web, AI/RL, Art & UI</li>
           </ul>
         </div>
       </div>
@@ -200,35 +199,35 @@ const skillCategories = [
 
     <!-- Projects Section (Seamless Editorial List) -->
     <section id="projects" class="space-y-6 scroll-mt-16">
-      <div class="flex items-center justify-between border-b border-neutral-200/80 pb-3">
+      <div class="flex items-center justify-between border-b border-[#E5E0D5] pb-3">
         <div class="flex items-center gap-3">
-          <span class="text-xs font-semibold tracking-wider text-neutral-400">02</span>
-          <h2 class="text-xl font-bold tracking-tight text-neutral-950">Featured Projects</h2>
+          <span class="text-xs font-semibold tracking-wider text-[#666666]">02</span>
+          <h2 class="text-lg font-bold text-[#141414]">Featured Projects</h2>
         </div>
         <a 
           href="https://github.com/amaydle" 
           target="_blank" 
           rel="noreferrer" 
-          class="text-xs font-medium text-neutral-500 hover:text-black inline-flex items-center gap-1 transition-colors"
+          class="text-xs font-medium text-[#666666] hover:text-[#7EA5C4] inline-flex items-center gap-1 transition-colors"
         >
           github.com/amaydle <ArrowUpRight class="w-3.5 h-3.5" />
         </a>
       </div>
 
-      <div class="divide-y divide-neutral-200/70 pt-2">
+      <div class="divide-y divide-[#E5E0D5] pt-2">
         {projects.map((project) => (
-          <div class="py-6 first:pt-2 last:pb-2 space-y-2.5 group">
+          <div class="py-6 first:pt-2 last:pb-2 space-y-2 group">
             <div class="flex items-baseline justify-between gap-4">
-              <h3 class="font-semibold text-base sm:text-lg text-neutral-950 group-hover:text-neutral-600 transition-colors">
+              <h3 class="font-semibold text-base text-[#141414] group-hover:text-[#7EA5C4] transition-colors">
                 {project.title}
               </h3>
-              <div class="flex items-center gap-3 text-neutral-500 text-xs shrink-0">
+              <div class="flex items-center gap-3 text-[#666666] text-xs shrink-0">
                 {project.github && (
                   <a 
                     href={project.github} 
                     target="_blank" 
                     rel="noreferrer" 
-                    class="hover:text-black transition-colors inline-flex items-center gap-1"
+                    class="hover:text-[#7EA5C4] transition-colors inline-flex items-center gap-1"
                   >
                     code <ArrowUpRight class="w-3 h-3" />
                   </a>
@@ -238,7 +237,7 @@ const skillCategories = [
                     href={project.demo} 
                     target="_blank" 
                     rel="noreferrer" 
-                    class="hover:text-black transition-colors inline-flex items-center gap-1"
+                    class="hover:text-[#7EA5C4] transition-colors inline-flex items-center gap-1"
                   >
                     live <ArrowUpRight class="w-3 h-3" />
                   </a>
@@ -246,13 +245,13 @@ const skillCategories = [
               </div>
             </div>
             
-            <p class="text-neutral-600 text-sm leading-relaxed max-w-2xl">
+            <p class="text-[#666666] text-sm leading-relaxed max-w-2xl">
               {project.description}
             </p>
 
             <div class="flex flex-wrap gap-2 pt-1">
               {project.tags.map((tag) => (
-                <span class="text-xs text-neutral-500 font-medium">
+                <span class="text-xs text-[#888888] font-medium">
                   #{tag}
                 </span>
               ))}
@@ -264,21 +263,21 @@ const skillCategories = [
 
     <!-- Skills Section (Seamless) -->
     <section id="skills" class="space-y-6 scroll-mt-16">
-      <div class="flex items-center gap-3 border-b border-neutral-200/80 pb-3">
-        <span class="text-xs font-semibold tracking-wider text-neutral-400">03</span>
-        <h2 class="text-xl font-bold tracking-tight text-neutral-950">Skills & Toolbox</h2>
+      <div class="flex items-center gap-3 border-b border-[#E5E0D5] pb-3">
+        <span class="text-xs font-semibold tracking-wider text-[#666666]">03</span>
+        <h2 class="text-lg font-bold text-[#141414]">Skills & Toolbox</h2>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 pt-2">
         {skillCategories.map((group) => (
           <div class="space-y-3">
-            <h3 class="font-semibold text-sm text-neutral-950">
+            <h3 class="font-semibold text-sm text-[#141414]">
               {group.category}
             </h3>
-            <ul class="space-y-2 text-sm text-neutral-600">
+            <ul class="space-y-2 text-sm text-[#666666]">
               {group.skills.map((skill) => (
                 <li class="flex items-center gap-2">
-                  <span class="text-neutral-400">•</span>
+                  <span class="text-[#7EA5C4]">•</span>
                   <span>{skill}</span>
                 </li>
               ))}
@@ -291,20 +290,20 @@ const skillCategories = [
     <!-- Contact Section (Seamless) -->
     <section id="contact" class="space-y-6 scroll-mt-16 pt-8">
       <div class="text-center space-y-4 max-w-md mx-auto">
-        <div class="text-xs font-semibold uppercase tracking-wider text-neutral-400">
+        <div class="text-xs font-semibold uppercase tracking-wider text-[#666666]">
           04 / Get In Touch
         </div>
-        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-neutral-950">
+        <h2 class="text-2xl sm:text-3xl font-bold text-[#141414]">
           Say hello :)
         </h2>
-        <p class="text-neutral-600 text-sm leading-relaxed">
+        <p class="text-[#666666] text-sm leading-relaxed">
           Have a question, a project idea, or just want to chat about tech or art? My inbox is always open.
         </p>
 
         <div class="flex flex-wrap justify-center gap-3 pt-3">
           <a 
             href="mailto:amayauthsarani@gmail.com" 
-            class="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg bg-neutral-950 hover:bg-neutral-800 text-white font-medium text-sm transition-colors"
+            class="inline-flex items-center gap-2 px-6 py-2.5 rounded-md bg-[#141414] hover:bg-[#2c2c2c] text-white font-medium text-sm transition-colors"
           >
             <Mail class="w-4 h-4" />
             amayauthsarani@gmail.com
@@ -313,7 +312,7 @@ const skillCategories = [
             href="https://www.linkedin.com/in/amaydle/" 
             target="_blank" 
             rel="noreferrer" 
-            class="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg bg-transparent hover:bg-neutral-200/50 text-neutral-900 border border-neutral-300 font-medium text-sm transition-colors"
+            class="inline-flex items-center gap-2 px-6 py-2.5 rounded-md bg-transparent hover:bg-neutral-200/50 text-[#141414] border border-[#d8d3c8] font-medium text-sm transition-colors"
           >
             <Linkedin class="w-4 h-4" />
             LinkedIn
@@ -324,7 +323,7 @@ const skillCategories = [
   </main>
 
   <!-- Footer -->
-  <footer class="border-t border-neutral-200/80 py-12 text-center text-xs text-neutral-500 mt-24">
+  <footer class="border-t border-[#E5E0D5] py-12 text-center text-xs text-[#666666] mt-24">
     <div class="max-w-4xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
       <p>© {new Date().getFullYear()} Amaya. All rights reserved.</p>
       <p>crafted with care using Astro & Tailwind</p>
