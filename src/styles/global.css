@@ -1,5 +1,18 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'AmayaHand';
+  src: url('/fonts/Amaydle_font-Regular.ttf') format('truetype'),
+       url('/fonts/Amaydle_font-Regular.otf') format('opentype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-hand {
+  font-family: 'AmayaHand', cursive, sans-serif;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
