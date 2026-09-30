@@ -2,8 +2,8 @@
 
 @font-face {
   font-family: 'AmayaHand';
-  src: url('/fonts/Amaydle_font-Regular.ttf?v=4') format('truetype'),
-       url('/fonts/Amaydle_font-Regular.otf?v=4') format('opentype');
+  src: url('/fonts/Amaydle_font-Regular.ttf?v=5') format('truetype'),
+       url('/fonts/Amaydle_font-Regular.otf?v=5') format('opentype');
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
